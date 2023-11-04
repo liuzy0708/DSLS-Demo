@@ -156,17 +156,16 @@ class DSA_AI_strategy():
 
                     else:
                         if self.label_count[i] == 0:
-                            self.X_store_collection[i] = self.X_memory_collection[i][-self.memory_space]
+                            self.X_store_collection[i] = self.X_memory_collection[i][-self.memory_space:]
 
                         else:
-                            self.X_store_collection[i] = self.X_memory_collection[i][-self.memory_space] + self.X_label_collection[i]
+                            self.X_store_collection[i] = self.X_memory_collection[i][-self.memory_space:] + self.X_label_collection[i]
 
+                for i in range(self.n_class):
                     self.y_store_collection[i] = [i] * len(self.X_store_collection[i])
 
-                self.X_store_collection = np.array([item for sublist in self.X_store_collection for item in sublist])
-                self.X_store_collection = self.X_store_collection.reshape(self.X_store_collection.shape[0], self.d)
-
-                self.y_store_collection = [item for sublist in self.y_store_collection for item in sublist]
+                self.X_store_collection =  np.vstack(self.X_store_collection)
+                self.y_store_collection = np.array([item for sublist in self.y_store_collection for item in sublist])
 
                 # Retrain
                 clf.fit(self.X_store_collection, self.y_store_collection)
