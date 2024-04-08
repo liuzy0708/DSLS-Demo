@@ -8,7 +8,9 @@ Safety assessment in dynamic and imbalanced data streams is crucial for various 
 
 Our approach introduces a dynamic submodular-based learning strategy tailored for real-time safety assessment in nonstationary environments. By leveraging submodular optimization, our strategy effectively selects informative data points while considering the imbalanced nature of the data and adapting to concept drifts over time.
 
+
 <img width="570" alt="截屏2024-04-08 20 44 09" src="https://github.com/liuzy0708/DSLS-Demo/assets/115722686/0b8eda46-f5f4-4851-952b-95544818b9b9">
+
 
 <img width="588" alt="截屏2024-04-08 20 44 18" src="https://github.com/liuzy0708/DSLS-Demo/assets/115722686/0dd4411b-7531-4f64-88a9-fff82606d804">
 
